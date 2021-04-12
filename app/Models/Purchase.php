@@ -10,6 +10,6 @@ class Purchase extends Model
     use HasFactory;
 
     protected $fillable=[
-        'title','description',
+        'name','number','email','title','description',
     ];
 }

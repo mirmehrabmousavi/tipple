@@ -12,8 +12,7 @@
                 <h3 class="card-title">Add New Blog</h3>
 
                 <div class="card-tools">
-                    <a href="{{ route('blogs.index') }}" class="btn btn-danger"><i class="fas fa-shield-alt"></i> See
-                        All Data</a>
+                    <a href="{{ route('blogs.index') }}" class="btn btn-danger"><i class="fas fa-shield-alt"></i> See All Data</a>
                 </div>
             </div>
             <!-- /.card-header -->
@@ -28,13 +27,17 @@
                     </div>
                     <div class="form-group">
                         <label>Body</label>
-                        <textarea name="body" id="editor1" cols="30" rows="10" required>text here...</textarea>
+                        <textarea name="body" cols="30" rows="10" required>text here...</textarea>
                     </div>
-                    <script>
-                        // Replace the <textarea id="editor1"> with a CKEditor 4
-                        // instance, using default configuration.
-                        CKEDITOR.replace( 'editor1' );
-                    </script>
+                    <div class="form-group">
+                        <label for="exampleInputFile">Choose Pic</label>
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <input type="file" name="image" class="custom-file-input" id="exampleInputFile" required>
+                                <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="card-footer">
                     <button type="submit" class="btn btn-primary">Submit</button>

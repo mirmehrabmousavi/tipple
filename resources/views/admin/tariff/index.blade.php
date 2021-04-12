@@ -21,15 +21,25 @@
                     <tr>
                         <th>ID</th>
                         <th>Title</th>
-                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Host</th>
+                        <th>Domain</th>
+                        <th>Support</th>
+                        <th>EXT 1</th>
+                        <th>EXT 2</th>
                     </tr>
                     </thead>
                     <tbody>
                     @foreach($tariffs as $val)
                     <tr>
                         <td>{{$val->id}}</td>
-                        <td>{{$val->title}}</td>
-                        <td>{{$val->description}}</td>
+                        <td>{{$val->name}}</td>
+                        <td>{{$val->price}}</td>
+                        <td>{{$val->host}}</td>
+                        <td>{{$val->domain}}</td>
+                        <td>{{$val->support}}</td>
+                        <td>{{$val->extra1}}</td>
+                        <td>{{$val->extra2}}</td>
                         <td class="row space-x-2">
                             <a href="{{ route('tariffs.show',['tariff'=>$val->id]) }}" class="btn btn-success">Show</a>
                             <a href="{{ route('tariffs.edit',['tariff'=>$val->id]) }}" class="btn btn-primary">Edit</a>

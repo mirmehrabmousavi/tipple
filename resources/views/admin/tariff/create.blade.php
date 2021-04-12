@@ -21,13 +21,39 @@
                 @csrf
                 <div class="card-body">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Title</label>
-                        <input type="text" name="title" class="form-control" id="exampleInputEmail1"
-                               placeholder="Enter Title" required>
+                        <label for="exampleInputEmail1">Name</label>
+                        <input type="text" name="name" class="form-control" id="exampleInputEmail1"
+                               placeholder="Enter Name" required autofocus>
                     </div>
                     <div class="form-group">
-                        <label>Description</label>
-                        <textarea class="form-control" name="description" id="body" cols="30" rows="10" required>text here...</textarea>
+                        <label for="exampleInputEmail1">Price</label>
+                        <input type="text" name="price" class="form-control" id="exampleInputEmail1"
+                               placeholder="Enter Price" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Host</label>
+                        <input type="text" name="host" class="form-control" id="exampleInputEmail1"
+                               placeholder="Enter Host" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Domain</label>
+                        <input type="text" name="domain" class="form-control" id="exampleInputEmail1"
+                               placeholder="Enter Domain" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Support</label>
+                        <input type="text" name="support" class="form-control" id="exampleInputEmail1"
+                               placeholder="Enter Support" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">EXT 1</label>
+                        <input type="text" name="extra1" class="form-control" id="exampleInputEmail1"
+                               placeholder="Enter ...">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">EXT 2</label>
+                        <input type="text" name="extra2" class="form-control" id="exampleInputEmail1"
+                               placeholder="Enter ...">
                     </div>
                 </div>
                 <div class="card-footer">

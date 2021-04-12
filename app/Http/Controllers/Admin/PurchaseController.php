@@ -26,7 +26,7 @@ class PurchaseController extends Controller
      */
     public function create()
     {
-        return view('admin.purchase.create');
+        return view('index.purchase');
     }
 
     /**
@@ -38,48 +38,16 @@ class PurchaseController extends Controller
     public function store(Request $request)
     {
         Purchase::create([
+            'name'=>$request['name'],
+            'number'=>$request['number'],
+            'email'=>$request['email'],
             'title'=>$request['title'],
             'description'=>$request['description'],
         ]);
-        return redirect(route('purchases.index'));
-    }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Slider  $purchase
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Purchase $purchase)
-    {
-        //
+        mail('info@tippler.ir','Purchase',"<h1>$request[name]</h1> <br> <h2>$request[number]</h2> <br> <h2>$request[email]</h2> <br><br> <h2>$request[title]</h2> <br> <p>$request[description]</p>");
+        return back();
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Slider  $purchase
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
-     */
-    public function edit(Purchase $purchase)
-    {
-        return view('admin.purchase.edit',compact('purchase'));
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Purchase  $purchase
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
-     */
-    public function update(Request $request, Purchase $purchase)
-    {
-        $data=$request->all();
-        $purchase->update($data);
-        return redirect(route('purchases.index'));
-    }
-
     /**
      * Remove the specified resource from storage.
      *

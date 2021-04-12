@@ -10,6 +10,6 @@ class Tariff extends Model
     use HasFactory;
 
     protected $fillable=[
-        'title','description',
+        'name','price','host','domain','support','extra1','extra2',
     ];
 }

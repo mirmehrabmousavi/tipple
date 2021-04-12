@@ -37,9 +37,13 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
+        $file=$request['image'];
+        $pic=$this->ImageUploaderPath($file,'uploads/blogs/');
+
         Blog::create([
             'title'=>$request['title'],
             'body'=>$request['body'],
+            'image'=>$pic,
         ]);
         return redirect(route('blogs.index'));
     }
@@ -48,11 +52,11 @@ class BlogController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\Blog  $blog
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function show(Blog $blog)
     {
-        //
+        return view('index.allblogs',compact('blog'));
     }
 
     /**
@@ -75,7 +79,15 @@ class BlogController extends Controller
      */
     public function update(Request $request, Blog $blog)
     {
+        if($request['image']) {
+            $file=$request['image'];
+            unlink($blog->image) or die('Error');
+            $img=$this->ImageUploaderPath($file,'uploads/blogs/');
+        }else{
+            $img=$blog->image;
+        }
         $data=$request->all();
+        $data['image']=$img;
         $blog->update($data);
         return redirect(route('blogs.index'));
     }

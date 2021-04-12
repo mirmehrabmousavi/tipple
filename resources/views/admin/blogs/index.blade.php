@@ -22,6 +22,7 @@
                         <th>ID</th>
                         <th>Title</th>
                         <th>Body</th>
+                        <th>Image</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -30,6 +31,7 @@
                         <td>{{$val->id}}</td>
                         <td>{{$val->title}}</td>
                         <td width="200">{{$val->body}}</td>
+                        <td><img src="/{{$val->image}}" alt="avatar" width="50"></td>
                         <td class="row space-x-2">
                             <a href="{{ route('blogs.show',['blog'=>$val->id]) }}" class="btn btn-success">Show</a>
                             <a href="{{ route('blogs.edit',['blog'=>$val->id]) }}" class="btn btn-primary">Edit</a>

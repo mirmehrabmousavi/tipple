@@ -22,12 +22,32 @@
                 @method('PATCH')
                 <div class="card-body">
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Title</label>
-                        <input type="text" name="title" class="form-control" value="{{ $tariff->title }}" id="exampleInputEmail1" placeholder="Enter Title" required>
+                        <label for="exampleInputEmail1">Name</label>
+                        <input type="text" name="name" class="form-control" value="{{ $tariff->name }}" id="exampleInputEmail1" required autofocus>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Description</label>
-                        <textarea type="text" name="description" class="form-control" id="exampleInputEmail1" placeholder="Enter Body" required>{{ $tariff->description }}</textarea>
+                        <label for="exampleInputEmail1">Price</label>
+                        <input type="text" name="price" class="form-control" value="{{ $tariff->price }}" id="exampleInputEmail1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Host</label>
+                        <input type="text" name="host" class="form-control" value="{{ $tariff->host }}" id="exampleInputEmail1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Domain</label>
+                        <input type="text" name="domain" class="form-control" value="{{ $tariff->domain }}" id="exampleInputEmail1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Support</label>
+                        <input type="text" name="support" class="form-control" value="{{ $tariff->support }}" id="exampleInputEmail1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">EXT 1</label>
+                        <input type="text" name="extra1" class="form-control" value="{{ $tariff->extra1 }}" id="exampleInputEmail1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">EXT 2</label>
+                        <input type="text" name="extra2" class="form-control" value="{{ $tariff->extra2 }}" id="exampleInputEmail1" required>
                     </div>
                 </div>
                 <!-- /.card-body -->

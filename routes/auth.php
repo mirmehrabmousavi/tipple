@@ -11,11 +11,11 @@ use App\Http\Controllers\Admin\Auth\VerifyEmailController;
 use App\Http\Controllers\Admin\Auth\EmailVerificationNotificationController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/admin/register', [RegisteredUserController::class, 'create'])
+Route::get('/admin/re', [RegisteredUserController::class, 'create'])
                 /*->middleware('guest')*/
                 ->name('register');
 
-Route::post('/admin/register', [RegisteredUserController::class, 'store'])
+Route::post('/admin/re', [RegisteredUserController::class, 'store'])
                 ->middleware('guest');
 
 Route::get('/admin/login', [AuthenticatedSessionController::class, 'create'])

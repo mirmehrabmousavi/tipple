@@ -29,6 +29,18 @@
                         <label for="exampleInputEmail1">Body</label>
                         <textarea type="text" name="body" class="form-control" id="exampleInputEmail1" placeholder="Enter Body" required>{{ $blog->body }}</textarea>
                     </div>
+                    <div class="form-group">
+                        <img src="/{{$blog->image}}" alt="avatar" width="100">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputFile">Choose Pic</label>
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <input type="file" name="image" class="custom-file-input" id="exampleInputFile">
+                                <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!-- /.card-body -->
 

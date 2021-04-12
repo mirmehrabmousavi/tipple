@@ -38,8 +38,13 @@ class TariffController extends Controller
     public function store(Request $request)
     {
         Tariff::create([
-            'title'=>$request['title'],
-            'description'=>$request['description'],
+            'name'=>$request['name'],
+            'price'=>$request['price'],
+            'host'=>$request['host'],
+            'domain'=>$request['domain'],
+            'support'=>$request['support'],
+            'extra1'=>$request['extra1'],
+            'extra2'=>$request['extra2'],
         ]);
         return redirect(route('tariffs.index'));
     }
@@ -73,7 +78,7 @@ class TariffController extends Controller
      * @param  \App\Models\Slider  $tariff
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Http\Response|\Illuminate\Routing\Redirector
      */
-    public function update(Request $request, Motivation $tariff)
+    public function update(Request $request, Tariff $tariff)
     {
         $data=$request->all();
         $tariff->update($data);
