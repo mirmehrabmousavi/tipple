@@ -470,7 +470,7 @@
                                 </a>
                                 <h3 class="ae-6" style="text-align: right;"><a href="#">{{$blogs->title}}</a></h3>
                                 <div class="ae-7"><p class="tiny opacity-6" style="text-align: right; max-lines: 2"><a
-                                            href="#">{{$blogs->description}}</a></p></div>
+                                            href="#">{!! $blogs->body !!}</a></p></div>
                             </li>
                         @endforeach
                     </ul>

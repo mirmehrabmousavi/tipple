@@ -27,7 +27,11 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Body</label>
-                        <textarea type="text" name="body" class="form-control" id="exampleInputEmail1" placeholder="Enter Body" required>{{ $blog->body }}</textarea>
+                        <textarea type="text" name="body" class="form-control" id="summary-ckeditor" placeholder="Enter Body" required>{{ $blog->body }}</textarea>
+                        <script src="//cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+                        <script>
+                            CKEDITOR.replace( 'summary-ckeditor' );
+                        </script>
                     </div>
                     <div class="form-group">
                         <img src="/{{$blog->image}}" alt="avatar" width="100">

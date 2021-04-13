@@ -27,7 +27,11 @@
                     </div>
                     <div class="form-group">
                         <label>Body</label>
-                        <textarea name="body" cols="30" rows="10" required>text here...</textarea>
+                        <textarea id="summary-ckeditor" name="body" cols="30" rows="10" required>text here...</textarea>
+                        <script src="//cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+                        <script>
+                            CKEDITOR.replace( 'summary-ckeditor' );
+                        </script>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputFile">Choose Pic</label>
